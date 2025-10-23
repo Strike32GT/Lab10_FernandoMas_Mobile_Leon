@@ -2,6 +2,8 @@ package com.mas.semana10_servicios.data.repository
 
 import com.mas.semana10_servicios.data.model.User
 import com.mas.semana10_servicios.data.remote.ApiService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -15,6 +17,8 @@ class UserRepository {
     private val apiService= retrofit.create(ApiService::class.java)
 
     suspend fun getUsers(): List<User>{
-        return apiService.getUsers()
+        return withContext(Dispatchers.IO){
+            apiService.getUsers()
+        }
     }
 }
