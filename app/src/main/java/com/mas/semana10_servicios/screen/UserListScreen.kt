@@ -154,7 +154,7 @@ fun UserCard(user: User) {
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = user.city,
+                text = user.address.city,
                 fontSize = 14.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

@@ -5,6 +5,10 @@ data class User (
     val name: String,
     val username: String,
     val email: String,
-    val city: String,
+    val address: Address,
     val phone: String
+)
+
+data class Address(
+    val city: String
 )
